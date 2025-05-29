@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalentCaddy - Coastal Engineering Recruitment That Actually Works</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF; 
+        }
+        /* Brand Colors from TalentCaddy Guidelines */
+        .bg-brand-dark-blue { background-color: #20265b; }
+        .text-brand-dark-blue { color: #20265b; }
+
+        .bg-brand-medium-blue { background-color: #3e4797; }
+        .text-brand-medium-blue { color: #3e4797; }
+        .border-brand-medium-blue { border-color: #3e4797; }
+
+        .bg-brand-beige { background-color: #e5dbc1; }
+        .text-brand-beige { color: #e5dbc1; }
+
+        .bg-brand-light-gray { background-color: #e2e7ea; }
+        .text-brand-light-gray { color: #e2e7ea; }
+        
+        .text-content-default { color: #374151; } 
+        .text-on-dark-bg { color: #e2e7ea; } 
+        .heading-on-dark-bg { color: #FFFFFF; }
+
+        .nav-link.active {
+            color: #3e4797; 
+            font-weight: 600;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #888; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+
+        .nav-logo-text { 
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #20265b; 
+        }
+        .nav-logo-text:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero background with overlay */
+        .hero-bg {
+            background-image: linear-gradient(135deg, #20265b 0%, #3e4797 100%);
+            position: relative;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .quote-block {
+            border-left: 4px solid #3e4797;
+            background-color: #f8fafc;
+            padding: 1rem 1.5rem;
+            font-style: italic;
+            color: #4b5563;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="text-content-default leading-relaxed">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#hero" class="nav-logo-text">
+                TalentCaddy
+            </a>
+            <div class="space-x-4 hidden md:flex">
+                <a href="#challenge" class="nav-link text-gray-600 hover:text-brand-medium-blue transition-colors">The Challenge</a>
+                <a href="#solution" class="nav-link text-gray-600 hover:text-brand-medium-blue transition-colors">What We Do</a>
+                <a href="#roles" class="nav-link text-gray-600 hover:text-brand-medium-blue transition-colors">Who We Find</a>
+                <a href="#success" class="nav-link text-gray-600 hover:text-brand-medium-blue transition-colors">Success Stories</a>
+                <a href="#process" class="nav-link text-gray-600 hover:text-brand-medium-blue transition-colors">How We Work</a>
+                <a href="#contact" class="nav-link text-gray-600 hover:text-brand-medium-blue transition-colors">Get Started</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-600 hover:text-brand-medium-blue hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-brand-medium-blue">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <a href="#challenge" class="block nav-link text-gray-600 hover:text-brand-medium-blue px-4 py-2 transition-colors">The Challenge</a>
+            <a href="#solution" class="block nav-link text-gray-600 hover:text-brand-medium-blue px-4 py-2 transition-colors">What We Do</a>
+            <a href="#roles" class="block nav-link text-gray-600 hover:text-brand-medium-blue px-4 py-2 transition-colors">Who We Find</a>
+            <a href="#success" class="block nav-link text-gray-600 hover:text-brand-medium-blue px-4 py-2 transition-colors">Success Stories</a>
+            <a href="#process" class="block nav-link text-gray-600 hover:text-brand-medium-blue px-4 py-2 transition-colors">How We Work</a>
+            <a href="#contact" class="block nav-link text-gray-600 hover:text-brand-medium-blue px-4 py-2 transition-colors">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-bg py-20 md:py-32"> 
+        <div class="container mx-auto px-6 text-center hero-content">
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">TalentCaddy</h1>
+            <h2 class="text-2xl md:text-3xl font-semibold text-white mb-8">Coastal Engineering Recruitment That Actually Works</h2>
+            <p class="text-lg md:text-xl text-brand-light-gray mb-8 max-w-3xl mx-auto">Finding the Right Coastal Engineer Shouldn't Feel Impossible</p>
+            <a href="#challenge" class="bg-brand-medium-blue hover:opacity-90 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition-all transform hover:scale-105">See How We Help</a>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="challenge" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-brand-dark-blue mb-8">We Know Because We Hear It All the Time</h2>
+            
+            <div class="max-w-4xl mx-auto mb-12">
+                <div class="quote-block text-lg mb-8">
+                    "We posted a job for a senior coastal engineer six months ago and got three responses - none with the right experience."
+                </div>
+                <p class="text-content-default text-lg leading-relaxed text-center">Sound familiar?</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-6 text-content-default text-lg mb-12">
+                <p>The reality is that good coastal engineers aren't browsing job boards. They're busy designing breakwaters, modeling storm surge, or managing complex waterfront projects. And when they do consider a move, they want to work with someone who understands the difference between a FEMA LOMR and a CLOMR.</p>
+                <p class="font-semibold text-brand-medium-blue text-center">That's where we come in. We speak your language and know your world.</p>
+            </div>
+
+            <div class="bg-brand-light-gray p-8 rounded-lg">
+                <h3 class="text-2xl font-semibold text-brand-dark-blue mb-6 text-center">The Challenge You're Facing</h3>
+                <div class="quote-block mb-6">
+                    "We need someone with SWAN modeling experience for our Gulf Coast hurricane protection project. The last recruiter sent us a traffic engineer and someone who designs swimming pools."
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-semibold text-brand-medium-blue mb-3">Here's what we see in the coastal engineering market:</h4>
+                        <ul class="space-y-2 text-content-default">
+                            <li>• <strong>Small talent pool:</strong> There are maybe 2,000 qualified coastal engineers in North America</li>
+                            <li>• <strong>High demand:</strong> Every major storm creates more infrastructure projects</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-brand-medium-blue mb-3">&nbsp;</h4>
+                        <ul class="space-y-2 text-content-default">
+                            <li>• <strong>Specialized skills:</strong> You can't just grab any civil engineer and hope for the best</li>
+                            <li>• <strong>Geographic constraints:</strong> Experience with local conditions matters</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="text-center text-content-default mt-6 font-medium">Most recruiters throw resumes at the wall and hope something sticks. We take a different approach.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="py-16 md:py-24 bg-brand-beige">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-brand-dark-blue mb-4">What We Actually Do</h2>
+            <p class="text-xl text-center text-brand-medium-blue font-semibold mb-12">We save you time. Instead of sorting through 200 resumes from general job boards, you'll interview 2-3 qualified candidates who actually understand coastal processes.</p>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold text-brand-dark-blue mb-6">Here's how:</h3>
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h4 class="font-semibold text-brand-medium-blue mb-2">We know the players</h4>
+                            <p class="text-content-default">Active relationships with coastal engineers across the US and Canada</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h4 class="font-semibold text-brand-medium-blue mb-2">We understand the work</h4>
+                            <p class="text-content-default">When you need ADCIRC experience, we know what that means</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h4 class="font-semibold text-brand-medium-blue mb-2">We're realistic about timelines</h4>
+                            <p class="text-content-default">Good people take 6-8 weeks to find, not 6 days</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h4 class="font-semibold text-brand-medium-blue mb-2">We handle the awkward conversations</h4>
+                            <p class="text-content-default">About salary, location, and why they're thinking about leaving</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="text-brand-medium-blue mb-4 inline-block">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-20 h-20">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-2xl font-semibold text-brand-dark-blue mb-4">The Result</h4>
+                        <p class="text-content-default text-lg">Qualified candidates who meet your technical requirements, delivered efficiently</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roles Section -->
+    <section id="roles" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-brand-dark-blue mb-4">The Types of People We Find</h2>
+            <p class="text-lg text-center text-content-default mb-12 max-w-3xl mx-auto">From rising stars to practice leaders, we know where to find the right coastal engineering talent.</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-brand-light-gray p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold text-brand-dark-blue mb-3">Senior Technical Leaders</h3>
+                    <p class="text-content-default mb-4">Practice leads, technical directors, and senior engineers who can mentor your team and win work. Usually PE licensed with 10+ years of coastal experience.</p>
+                </div>
+
+                <div class="bg-brand-light-gray p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold text-brand-dark-blue mb-3">Project Managers</h3>
+                    <p class="text-content-default mb-4">PMs who understand coastal work isn't just civil engineering. They know about tide windows, environmental windows, and why marine contractors are different.</p>
+                </div>
+
+                <div class="bg-brand-light-gray p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold text-brand-dark-blue mb-3">Modeling Specialists</h3>
+                    <p class="text-content-default mb-4">Engineers who can set up and run complex numerical models. Whether it's MIKE 21, SWAN, or ADCIRC, they know how to make the software sing.</p>
+                </div>
+
+                <div class="bg-brand-light-gray p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold text-brand-dark-blue mb-3">Design Engineers</h3>
+                    <p class="text-content-default mb-4">The people who design the structures. Marine structures, coastal protection, ports and terminals. They understand wave forces, soil-structure interaction, and corrosion.</p>
+                </div>
+
+                <div class="bg-brand-light-gray p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold text-brand-dark-blue mb-3">Rising Stars</h3>
+                    <p class="text-content-default mb-4">EITs and junior engineers on the PE track. Smart people who chose coastal engineering and want to build their careers in the field.</p>
+                </div>
+
+                <div class="bg-brand-light-gray p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold text-brand-dark-blue mb-3">Specialty Roles</h3>
+                    <p class="text-content-default mb-4">Permitting specialists, dredging engineers, coastal resilience planners. The niche experts who make complex projects possible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories Section -->
+    <section id="success" class="py-16 md:py-24 bg-brand-beige">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-brand-dark-blue mb-4">Recent Success Stories</h2>
+            
+            <div class="text-center mb-12">
+                <div class="inline-block bg-brand-medium-blue text-white p-6 rounded-lg">
+                    <div class="text-4xl font-bold mb-2">6 weeks</div>
+                    <div class="text-lg">Average time to placement for senior roles</div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-brand-dark-blue mb-3">Senior Coastal Engineer | Florida</h3>
+                    <p class="text-content-default">Major consultancy needed someone with hurricane modeling experience. Found a P.E. with 12 years at USACE who specialized in storm surge modeling for the Southeast.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-brand-dark-blue mb-3">Marine Structures Lead | Vancouver, BC</h3>
+                    <p class="text-content-default">Growing firm landed a big port expansion project but needed a structural engineer with marine experience. Placed someone who had designed wharves and terminals across the Pacific Northwest.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-brand-dark-blue mb-3">Coastal Practice Director | Baton Rouge, LA</h3>
+                    <p class="text-content-default">Regional firm wanted to grow their coastal practice. Found a director-level engineer with Louisiana coastal experience and business development skills.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-brand-dark-blue mb-3">Coastal Modeling Scientist | Montreal, QC</h3>
+                    <p class="text-content-default">Needed someone who could handle complex Great Lakes modeling. Placed a Ph.D. with extensive experience in large lake hydrodynamics and ice modeling.</p>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-content-default">Our clients include <strong class="text-brand-medium-blue">Baird & Associates, APTIM, Race Coastal, and Anchor QEA</strong>, along with regional firms and government agencies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-brand-dark-blue mb-4">How We Work</h2>
+            <p class="text-lg text-center text-content-default mb-12 max-w-3xl mx-auto">Two engagement models, depending on what you need:</p>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-brand-light-gray p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-brand-dark-blue mb-4">Executive Search (Retained)</h3>
+                    <p class="text-content-default mb-6">For senior roles, practice leads, and hard-to-fill positions. We do the market research, handle the confidential conversations, and manage the entire process.</p>
+                    <div class="bg-white p-4 rounded-lg">
+                        <p class="text-sm text-brand-medium-blue font-semibold">Typical timeline: 6-10 weeks</p>
+                    </div>
+                </div>
+
+                <div class="bg-brand-light-gray p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-brand-dark-blue mb-4">Project-Based Recruitment</h3>
+                    <p class="text-content-default mb-6">For specific project needs or when you need someone quickly. We tap our network and focus on active candidates.</p>
+                    <div class="bg-white p-4 rounded-lg">
+                        <p class="text-sm text-brand-medium-blue font-semibold">Typical timeline: 3-6 weeks</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-brand-beige p-8 rounded-lg">
+                <h3 class="text-2xl font-semibold text-brand-dark-blue mb-6 text-center">Either way, you get:</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <ul class="space-y-3 text-content-default">
+                            <li>• Qualified candidates who meet your technical requirements</li>
+                            <li>• Market intelligence about compensation and availability</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="space-y-3 text-content-default">
+                            <li>• Help with negotiations and closing</li>
+                            <li>• A replacement guarantee if things don't work out</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We Work With -->
+    <section class="py-16 md:py-24 bg-brand-beige">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-brand-dark-blue mb-8">Who We Work With</h2>
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="text-lg text-content-default mb-8">Engineering consultancies, government agencies, contractors, and developers across the US and Canada. From small specialized firms to large international companies.</p>
+                <p class="text-lg text-content-default font-medium">What they have in common: they need skilled coastal engineers and don't have time to sort through unqualified candidates.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-brand-dark-blue">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Ready to Find Your Next Coastal Engineer?</h2>
+            <p class="text-xl text-brand-light-gray mb-10 max-w-3xl mx-auto leading-relaxed">
+                Let's have a conversation about your needs. We'll tell you what's realistic, what it'll take, and how we can help.
+            </p>
+            <div class="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
+                <a href="mailto:info@talentcaddy.com" class="inline-block bg-brand-medium-blue hover:opacity-90 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition-all transform hover:scale-105">
+                    Start the Conversation
+                </a>
+                <a href="tel:+1-424-645-2080" class="inline-block border-2 border-white text-white hover:bg-white hover:text-brand-dark-blue font-semibold py-3 px-8 rounded-lg transition-all">
+                    Call Us: (424) 645-2080
+                </a>
+            </div>
+            <p class="mt-8 text-brand-light-gray">Email: info@talentcaddy.com</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <a href="#" class="text-xl font-semibold text-white">TalentCaddy</a>
+            <p class="my-4 text-sm">
+                Coastal Engineering Recruitment That Actually Works
+            </p>
+            <div class="flex justify-center space-x-6 my-4">
+                <a href="#" class="hover:text-blue-300 transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-blue-300 transition-colors">Terms of Service</a>
+            </div>
+            <p class="text-xs">&copy; <script>document.write(new Date().getFullYear())</script> TalentCaddy Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Active navigation highlighting
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
